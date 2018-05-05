@@ -1,0 +1,1 @@
+ALTER TABLE `t_user_club_inf` ADD `accuracy` INT(20) NOT NULL AFTER `hit_shots`;

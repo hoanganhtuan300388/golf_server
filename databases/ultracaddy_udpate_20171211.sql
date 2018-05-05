@@ -1,0 +1,1 @@
+ALTER TABLE `t_user_round_rlt` ADD `current_lat` DOUBLE NULL COMMENT '現在位置情報Lat ' AFTER `longest_drive_distance`, ADD `current_long` DOUBLE NULL COMMENT '現在位置情報Long' AFTER `current_lat`, ADD `calibration_lat` DOUBLE NULL COMMENT 'キャリブレーションLat' AFTER `current_long`, ADD `calibration_long` DOUBLE NULL COMMENT 'キャリブレーションLong' AFTER `calibration_lat`;

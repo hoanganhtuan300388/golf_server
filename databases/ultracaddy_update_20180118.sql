@@ -1,0 +1,1 @@
+ALTER TABLE `m_golf_field` ADD `shotnavi_url` VARCHAR(500) NULL AFTER `insert_at`;

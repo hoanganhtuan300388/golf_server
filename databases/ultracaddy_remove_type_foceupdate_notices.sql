@@ -1,0 +1,1 @@
+ALTER TABLE `t_notice` DROP `type`, DROP `force_update_version`;

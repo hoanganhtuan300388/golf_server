@@ -1,0 +1,1 @@
+ALTER TABLE `t_user_acc_inf` CHANGE `height` `height` VARCHAR(64) NULL DEFAULT NULL COMMENT '身長';

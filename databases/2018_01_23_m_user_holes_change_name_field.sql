@@ -1,0 +1,2 @@
+ALTER TABLE `t_user_hole_rlt` CHANGE `guard_bunker​_flg` `guard_bunker_flg` TINYINT(2) NULL DEFAULT NULL COMMENT 'ガードバンカー落ちる';
+ALTER TABLE `t_user_hole_rlt` CHANGE `km_guard_bunker​_flg` `km_guard_bunker_flg` TINYINT(2) NULL DEFAULT NULL COMMENT 'ガードバンカー落ちる（簡単モード）';

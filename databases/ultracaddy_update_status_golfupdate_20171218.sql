@@ -1,0 +1,1 @@
+ALTER TABLE `t_golf_update_inf` CHANGE `status` `status` TINYINT(1) NULL DEFAULT NULL COMMENT 'ステータス 0 : 未対応 1:対応済';

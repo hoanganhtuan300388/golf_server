@@ -1,0 +1,339 @@
+.form-group.has-error .error-message {
+    color: #dd4b39;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+.dataTable th a {
+    display: block;
+    border: hidden;
+    position: relative;
+    color: #333;
+    padding-right: 20px;
+}
+
+.dataTable th a:after {
+    font-family: "Glyphicons Halflings";
+    opacity:0.2;
+    content:"\e150";
+    position: absolute;
+    right: 0px;
+}
+
+.dataTable th a.asc:after {
+    content: "\e155";
+    opacity: 0.5;
+}
+
+.dataTable th a.desc:after {
+    content: "\e156";
+    opacity: 0.5;
+}
+
+.form-group .radio label {
+    margin-right: 15px;
+}
+
+/* Auth default layout */
+#auth-wrapper .navbar {
+    background-color: #d2d6de;
+    border: 1px solid;
+}
+
+#auth-wrapper .navbar-header {
+    width: 100%;
+    text-align: center;
+    border-left: 1px solid;
+    border-right: 1px solid;
+}
+
+#auth-wrapper h1 {
+    color: #000;
+    font-size: 45px;
+}
+
+/* Login form */
+#login-box {
+    margin-top: 120px;
+    border-radius: 0;
+    border: 1px solid #000;
+    font-size: 25px;
+}
+
+#login-box .box-header {
+    text-align: center;
+    border-bottom: 1px solid #000;
+    padding: 20px 0;
+}
+
+#login-box h3 {
+    font-size: 25px;
+}
+
+#login-box form {
+    padding: 50px 15px;
+}
+
+#login-box label {
+    font-weight: normal;
+    padding-left: 0;
+}
+
+#login-box button[type=submit] {
+    font-size: 25px;
+    color: #000;
+    border-radius: 0;
+}
+
+#login-box input[type=checkbox] {
+    display: none;
+}
+
+#login-box input[type=checkbox] + span:before {
+    content: "\f096";
+    font-family: 'FontAwesome';
+    font-weight: normal;
+    display: inline-block;
+    margin-right: 20px;
+    width: 10px;
+}
+
+#login-box input[type=checkbox]:checked + span:before {
+    content: "\f14a";
+}
+
+/* User Template */
+/* Trang quản lí người dùng */
+#users-management .input-group-addon,
+#billings-log .input-group-addon {
+    font-weight: 600;
+}
+
+#users-management a.btn,
+#billings-log a.btn {
+    width: 100px;
+    font-size: 16px;
+}
+
+/* Trang thông tin người dùng */
+#user-info .box {
+    border-radius: 0;
+    box-shadow: none;
+    border-top: 0;
+    margin-bottom: 0;
+}
+
+#user-info .input-group,
+#billing-details .input-group {
+    display: flex;
+}
+
+#user-info .input-group-addon,
+#billings-log .input-group-addon,
+#billing-details .input-group-addon{
+    min-width: 140px;
+    font-weight: 600;
+    height: 32px;
+    border-bottom: none;
+}
+
+#user-info .input-group:last-child .input-group-addon,
+#billing-details .input-group:last-child  .input-group-addon{
+    border-bottom: 1px solid #d2d6de;
+}
+
+#user-info .input-group .input-group-addon:last-child,
+#billing-details .input-group .input-group-addon:last-child {
+    flex: 1;
+    border-left: 1px solid #d2d6de;
+    text-align: left;
+}
+
+#user-info .box-footer button {
+    margin-right: 10px;
+}
+/* màn hình quản lí golf*/
+#hole-body {
+    margin-top : 50px;
+}
+#hole-body .box {
+    width : 250px;
+    height : 200px;
+    margin-bottom  :50px;
+}
+#hole-body .box .button-holedetail {
+    background-color :#367FA9;
+    width : 250px;
+    height : 50px;
+    border : none;
+}
+.button-addhole {
+    width : 250px;
+    height : 200px;
+    background-color :transparent;
+    border : none;
+    font-size : 70px;
+}
+#hole-body .box .box-footer {
+    padding : 0;
+}
+#hole-header h4 {
+    font-weight : 1000;
+}
+.popup {
+    width:100%;
+    height:100%;
+    display:none;
+    position:fixed;
+    top:0px;
+    left:0px;
+    background:rgba(0,0,0,0.75);
+    overflow:auto;
+}
+
+.popup-inner {
+    max-width:700px;
+    width:90%;
+    padding:30px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform:translate(-50%, -50%);
+    transform:translate(-50%, -50%);
+    box-shadow:0px 2px 6px rgba(0,0,0,1);
+    border-radius:3px;
+    background:#fff;
+}
+.popup-inner .form-group {
+    padding : 15px;
+    margin : 15px;
+}
+.popup-close {
+    width:30px;
+    height:30px;
+    padding-top:4px;
+    display:inline-block;
+    position:absolute;
+    top:0px;
+    right:0px;
+    transition:ease 0.25s all;
+    -webkit-transform:translate(50%, -50%);
+    transform:translate(50%, -50%);
+    border-radius:1000px;
+    background:rgba(0,0,0,0.8);
+    font-family:Arial, Sans-Serif;
+    font-size:20px;
+    text-align:center;
+    line-height:100%;
+    color:#fff;
+}
+
+.popup-close:hover {
+    -webkit-transform:translate(50%, -50%) rotate(180deg);
+    transform:translate(50%, -50%) rotate(180deg);
+    background:rgba(0,0,0,1);
+    text-decoration:none;
+}
+
+/* input required */
+.required-field-block {
+    position: relative;
+}
+
+.required-field-block .required-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin: -0.25em 0.25em 0em;
+    background-color: #E8E8E8;
+    border-color: #E8E8E8;
+    padding: 0.5em 0.8em;
+    color: rgba(0, 0, 0, 0.65);
+    text-transform: uppercase;
+    font-weight: normal;
+    border-radius: 0.325em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: background 0.1s linear;
+    -moz-transition: background 0.1s linear;
+    transition: background 0.1s linear;
+    font-size: 75%;
+}
+
+.required-field-block .required-icon {
+    background-color: transparent;
+    position: absolute;
+    top: 0em;
+    right: 0em;
+    z-index: 10;
+    margin: 0em;
+    width: 30px;
+    height: 30px;
+    padding: 0em;
+    text-align: center;
+    -webkit-transition: color 0.2s ease;
+    -moz-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+}
+
+.required-field-block .required-icon:after {
+    position: absolute;
+    content: "";
+    right: 1px;
+    top: 1px;
+    z-index: -1;
+    width: 0em;
+    height: 0em;
+    border-top: 0em solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-left: 0em solid transparent;
+    border-right-color: inherit;
+    -webkit-transition: border-color 0.2s ease;
+    -moz-transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease;
+}
+
+.required-field-block .required-icon .text {
+    color: #B80000;
+    font-size: 26px;
+    margin: -3px 0 0 12px;
+}
+
+.popup-inner-2 {
+    overflow:auto;
+    width: 80%;
+    padding:30px;
+    position:absolute;
+    top:700px;
+    left:55%;
+    -webkit-transform:translate(-50%, -50%);
+    transform:translate(-50%, -50%);
+    box-shadow:0px 2px 6px rgba(0,0,0,1);
+    border-radius:3px;
+    background:#fff;
+}
+.bkChecked{
+    background-color: #ecf0f5
+}
+.golfboderError{
+    border-color: #dd4b39;
+}
+.golfboderErrorCourse{
+    border-color: #dd4b39;
+}
+.error-message-course{
+    color: #dd4b39;
+}
+.error-message-hole{
+    color: #dd4b39;
+}
+.error-message{
+    color: #dd4b39;
+}
+.daterangepicker .ranges{
+    display: none;
+}

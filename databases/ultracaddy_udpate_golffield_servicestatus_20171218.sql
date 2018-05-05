@@ -1,0 +1,1 @@
+ALTER TABLE `m_golf_field` CHANGE `service_status` `service_status` TINYINT(2) NOT NULL DEFAULT '2' COMMENT 'サービス状態:１：公開中　　　２：閉鎖中　　　３：破棄済';

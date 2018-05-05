@@ -1,0 +1,112 @@
+public function index()
+    {
+		//ini_set('memory_limit','16111M');
+		ini_set('memory_limit', '-1');
+		ini_set('max_execution_time', 30000);
+        $numberRun = 2000;
+        $i = 0;
+        do {
+			//Search data query
+            //$sqlOldgreen = "SELECT * FROM tM07GreenSep WHERE name LIKE '%フロント%' OR name LIKE '%バック%' OR name LIKE '%センター%' ORDER BY club_id ASC, course_id ASC, hole_id ASC, input_date ASC LIMIT ".$numberRun." OFFSET ".$i*$numberRun;
+            //$sqlOldgreen = "SELECT * FROM tM07GreenSep WHERE club_id = 242 AND (name LIKE '%フロント%' OR name LIKE '%バック%' OR name LIKE '%センター%') ORDER BY club_id ASC, course_id ASC, hole_id ASC, input_date ASC LIMIT ".$numberRun." OFFSET ".$i*$numberRun;
+            $sqlOldgreen = "SELECT * FROM tM07GreenSep WHERE (pos_long != 0 AND pos_lat != 0) AND (name LIKE '%フロント%' OR name LIKE '%バック%' OR name LIKE '%センター%') ORDER BY club_id ASC, course_id ASC, hole_id ASC, input_date ASC LIMIT ".$numberRun." OFFSET ".$i*$numberRun;
+			$dataSep = array();
+			$dataSep = $this->OldGreen->query($sqlOldgreen);
+			//フロント front_lat, バック back_lat, センター centre_lat
+			if(count($dataSep) > 0){
+				foreach($dataSep as $key => $value){
+					$club_id_tmp = 	$value['tM07GreenSep']['club_id'];
+					$course_id_tmp = 	$value['tM07GreenSep']['course_id'];
+					$hole_id_tmp = 	$value['tM07GreenSep']['hole_id'];
+					$data = $dataGreen = array();
+					$dataGreen = $this->Green->getGreenId($club_id_tmp, $course_id_tmp, $hole_id_tmp);
+					$data['golf_field_id'] =	$value['tM07GreenSep']['club_id'];
+					$data['course_id'] = $value['tM07GreenSep']['course_id'];
+					$data['hole_id'] =	$value['tM07GreenSep']['hole_id'];
+					
+					
+					if (strpos($value['tM07GreenSep']['name'], '????') !== false) {
+						if(count($dataGreen) > 0){
+							if($dataGreen['Green']['front_lat'] == 0 || $dataGreen['Green']['front_long'] == 0){
+								$data['front_lat'] = $value['tM07GreenSep']['pos_lat'];
+								$data['front_long'] = $value['tM07GreenSep']['pos_long'];
+							}
+						}else{
+							$data['front_lat'] = $value['tM07GreenSep']['pos_lat'];
+							$data['front_long'] = $value['tM07GreenSep']['pos_long'];
+						}
+					}elseif(strpos($value['tM07GreenSep']['name'], '???') !== false){
+						if(count($dataGreen) > 0){
+							if($dataGreen['Green']['back_lat'] == 0 || $dataGreen['Green']['back_long'] == 0){
+								$data['back_lat'] = $value['tM07GreenSep']['pos_lat'];
+								$data['back_long'] = $value['tM07GreenSep']['pos_long'];
+							}
+						}else{
+							$data['back_lat'] = $value['tM07GreenSep']['pos_lat'];
+							$data['back_long'] = $value['tM07GreenSep']['pos_long'];
+						}
+					}elseif(strpos($value['tM07GreenSep']['name'], '????') !== false){
+						if(count($dataGreen) > 0){
+							if($dataGreen['Green']['centre_lat'] == 0 || $dataGreen['Green']['centre_long'] == 0){
+								$data['centre_lat'] = $value['tM07GreenSep']['pos_lat'];
+								$data['centre_long'] = $value['tM07GreenSep']['pos_long'];
+							}
+						}else{
+							$data['centre_lat'] = $value['tM07GreenSep']['pos_lat'];
+							$data['centre_long'] = $value['tM07GreenSep']['pos_long'];
+						}
+					}
+					if(count($dataGreen) > 0){
+						$data['green_id'] = $dataGreen['Green']['green_id'];
+					}else{
+						$data['insert_at'] = date('Y-m-d H:i:s');
+						$this->Green->create();
+					}
+					$this->Green->save($data);
+					debug($this->Green->id);
+					debug($value['tM07GreenSep']['club_id']);
+				}
+			}			
+            $i++;
+        } while (count($dataSep) == $numberRun);
+    }
+	
+	
+--------------------------------	
+//model OldGreen
+khai bao mỗi cái bảng tM07GreenSep
+//model Green
+	
+App::uses('AppModel', 'Model'); 
+class Green extends AppModel {
+    public $name = 'Green';
+    public $useTable = 'm_green';
+	public $primaryKey = 'green_id';
+    /*public $validate = array(
+        'name' => array(
+            'rule' => array('maxLength', 255),
+            'message' => 'longitude error format'
+        )
+    );
+    public function getAllData(){
+        return $this->find('list',array(
+            'conditions' => array(
+                'del_flg' => 0
+            ),
+            'fields' => array('id','name')
+        ));
+    }
+    public function countGreen($conditions){
+        return $this->find('count',$conditions);
+    }
+	*/
+    public function getGreenId($club_id_tmp, $course_id_tmp, $hole_id_tmp){
+        return $this->find('first',array(
+            'conditions' => array(
+                "Green.golf_field_id" => $club_id_tmp,
+                "Green.course_id" => $course_id_tmp,
+                "Green.hole_id" => $hole_id_tmp
+            )
+        ));
+    }
+}

@@ -1,0 +1,3 @@
+ALTER TABLE `t_user_shot_rlt` CHANGE `shot_order` `shot_order` INT(20) NULL COMMENT 'ショット順番', CHANGE `shot_state` `shot_state` INT(20) NULL COMMENT 'ショットステージ1 SettingTee 2 SettingGreen 3 SettingExpectedPosition 4 SettingNerai 5 SettingRai 6 SettingResultedPosition 7 SettingDroppedPosition 8 SettingPat 9 FixedCupIn';
+ALTER TABLE `t_user_hole_rlt` ADD `hole_stage` TINYINT(2) NOT NULL DEFAULT '1' COMMENT 'スコア入力状態' AFTER `status`;
+ALTER TABLE `t_user_hole_rlt` DROP `shot_order`;

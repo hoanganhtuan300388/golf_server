@@ -1,0 +1,3 @@
+ALTER TABLE `t_user_course_rlt` ADD `m_course_name` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'コース名:kanji/hiragana' AFTER `m_course_id`, ADD `m_course_name_kana` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'コース名（カナ）:katakana' AFTER `m_course_name`, ADD `m_course_name_en` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'コース名（英字）:english' AFTER `m_course_name_kana`;
+ALTER TABLE `m_nation` CHANGE `nation_code` `nation_name_en` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '国名(英語）';
+ALTER TABLE `m_nation` CHANGE `nation_name` `nation_name_jp` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '国名(日本語）'; 

@@ -1,0 +1,2 @@
+INSERT INTO `t_admin_inf` (`id`, `login_id`, `admin_name`, `admin_pass`, `last_login_time`, `update_by`, `updated`, `create_by`, `created`, `delete_flg`, `status`) VALUES
+(1, 'admin', '橋本 賢二', '$2y$10$.f58.gRpT0JZmAhT1.Sg/.9gnivMpcifkiham1RwYOSspGOdgo7MG', NULL, NULL, NULL, NULL, '2017-11-20 09:11:42', 0, 1);

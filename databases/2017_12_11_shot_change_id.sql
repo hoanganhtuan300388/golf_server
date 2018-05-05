@@ -1,0 +1,1 @@
+ALTER TABLE `t_user_shot_rlt` CHANGE `id` `id` VARCHAR(32) NOT NULL;

@@ -1,0 +1,2 @@
+ALTER TABLE `t_billing_inf` CHANGE `billing_type` `billing_type` TINYINT(2) NOT NULL COMMENT '課金タイプ, 1: 1 month, 2: 3 months, 3: 6 months, 4: 1 year',
+CHANGE `device_os` `device_os` TINYINT(2) NULL DEFAULT NULL COMMENT '端末OS １：iOS ２：Android ３：他';

@@ -1,0 +1,2 @@
+ALTER TABLE `t_user_shot_rlt` CHANGE `id` `id` VARCHAR(36) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'id';
+ALTER TABLE `t_user_club_inf` CHANGE `id` `id` VARCHAR(36) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'id';

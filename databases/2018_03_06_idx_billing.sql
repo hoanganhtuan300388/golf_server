@@ -1,0 +1,1 @@
+ALTER TABLE `ultracaddy`.`t_billing_inf` ADD INDEX idx_user_account(`user_account_id`);

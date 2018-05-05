@@ -1,0 +1,1 @@
+ALTER TABLE `m_club_category` ADD `category_name_en` VARCHAR(128) NULL COMMENT 'カテゴリ名' AFTER `category_name`, ADD `category_color` VARCHAR(128) NULL COMMENT '色' AFTER `category_name_en`;
